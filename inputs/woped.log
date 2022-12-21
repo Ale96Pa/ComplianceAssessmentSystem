@@ -1,0 +1,314 @@
+[2022-12-21 08:31:20,444] 0  INFO GUI_LOGGER: INIT APPLICATION
+[2022-12-21 08:31:20,484] 40  INFO CORE_LOGGER: START INIT Application
+[2022-12-21 08:31:20,500] 56  INFO CONFIG_LOGGER: Setting default home directory: C:\Users\palma\.WoPeD-3.8.0\nets\
+[2022-12-21 08:31:20,500] 56  INFO CONFIG_LOGGER: Loading configuration from: C:\Users\palma\.WoPeD-3.8.0\WoPeDconfig.xml.
+[2022-12-21 08:31:20,765] 321  INFO CONFIG_LOGGER: Setting Locale to en_US
+[2022-12-21 08:31:20,773] 329  INFO CONFIG_LOGGER: Setting home directory: C:\Users\palma\.WoPeD-3.8.0\nets\
+[2022-12-21 08:31:20,773] 329  INFO CONFIG_LOGGER: Setting current working directory: C:\Users\palma\Desktop\imp-model\src\dataset\business_model
+[2022-12-21 08:31:20,837] 393  INFO CONFIG_LOGGER: Configuration successfully loaded.
+[2022-12-21 08:31:20,849] 405  WARN CONFIG_LOGGER: Configuration file not found: C:\Users\palma\.WoPeD-3.8.0\WoPeDmetrics.xml. Using built-in settings.
+[2022-12-21 08:31:20,885] 441  INFO CONFIG_LOGGER: Configuration successfully loaded.
+[2022-12-21 08:31:20,909] 465  INFO CORE_LOGGER: Look-And-Feel set to com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+[2022-12-21 08:31:21,475] 1031  INFO GUI_LOGGER: END  INIT Application
+[2022-12-21 08:31:21,561] 1117 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Import.text
+[2022-12-21 08:31:21,565] 1121 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Import.tooltip
+[2022-12-21 08:31:21,565] 1121 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Export.text
+[2022-12-21 08:31:21,565] 1121 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Export.tooltip
+[2022-12-21 08:31:21,836] 1392 DEBUG QUALANALYSIS_LOGGER: -> init() org.woped.qualanalysis.coverabilitygraph.gui.CoverabilityGraphFrameController
+[2022-12-21 08:31:21,843] 1399 DEBUG QUALANALYSIS_LOGGER: <- init() org.woped.qualanalysis.coverabilitygraph.gui.CoverabilityGraphFrameController
+[2022-12-21 08:31:21,887] 1443 DEBUG FILE_LOGGER: ##### START PNML Version (1.3.2) IMPORT #####
+[2022-12-21 08:31:22,218] 1774 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (0 ms)
+[2022-12-21 08:31:22,218] 1774 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (5 ms)
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p1) imported
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p2) imported
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p4) imported
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p6) imported
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p7) imported
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p8) imported
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p12) imported
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p11) imported
+[2022-12-21 08:31:22,733] 2289 DEBUG FILE_LOGGER:  ... Place (ID:p14) imported
+[2022-12-21 08:31:22,737] 2293 DEBUG FILE_LOGGER:  ... Place (ID:p13) imported
+[2022-12-21 08:31:22,753] 2309 DEBUG FILE_LOGGER:  ... Transition (ID:t4) imported 
+[2022-12-21 08:31:22,753] 2309 DEBUG FILE_LOGGER:  ... Transition (ID:t5) imported 
+[2022-12-21 08:31:22,757] 2313 DEBUG FILE_LOGGER:  ... Transition (ID:t6) imported 
+[2022-12-21 08:31:22,761] 2317 DEBUG FILE_LOGGER:  ... Transition (ID:t7) imported 
+[2022-12-21 08:31:22,761] 2317 DEBUG FILE_LOGGER:  ... Transition (ID:t13) imported 
+[2022-12-21 08:31:22,761] 2317 DEBUG FILE_LOGGER:  ... Transition (ID:t1) imported 
+[2022-12-21 08:31:22,761] 2317 DEBUG FILE_LOGGER:  ... Transition (ID:t2) imported 
+[2022-12-21 08:31:22,765] 2321 DEBUG FILE_LOGGER:  ... Arc created: (ID:a261) p1 -> t1 
+[2022-12-21 08:31:22,765] 2321 DEBUG FILE_LOGGER:  ... Arc created: (ID:a262) t1 -> p2 
+[2022-12-21 08:31:22,765] 2321 DEBUG FILE_LOGGER:  ... Arc created: (ID:a10) t5 -> p12 
+[2022-12-21 08:31:22,769] 2325 DEBUG FILE_LOGGER:  ... Arc created: (ID:a273) p11 -> t13 
+[2022-12-21 08:31:22,769] 2325 DEBUG FILE_LOGGER:  ... Arc created: (ID:a286) t13 -> p13 
+[2022-12-21 08:31:22,769] 2325 DEBUG FILE_LOGGER:  ... Arc created: (ID:a6) p4 -> t2 
+[2022-12-21 08:31:22,769] 2325 DEBUG FILE_LOGGER:  ... Arc created: (ID:a8) t2 -> p8 
+[2022-12-21 08:31:22,769] 2325 DEBUG FILE_LOGGER:  ... Arc created: (ID:a9) p8 -> t5 
+[2022-12-21 08:31:22,769] 2325 DEBUG FILE_LOGGER:  ... Arc created: (ID:a266) p6 -> t7 
+[2022-12-21 08:31:22,769] 2325 DEBUG FILE_LOGGER:  ... Arc created: (ID:a267) t7 -> p7 
+[2022-12-21 08:31:22,769] 2325 DEBUG FILE_LOGGER:  ... Arc created: (ID:a263) p2 -> t4 
+[2022-12-21 08:31:22,773] 2329 DEBUG FILE_LOGGER:  ... Arc created: (ID:a276) t4 -> p11 
+[2022-12-21 08:31:22,773] 2329 DEBUG FILE_LOGGER:  ... Arc created: (ID:a3) p2 -> t4 
+[2022-12-21 08:31:22,773] 2329 DEBUG FILE_LOGGER:  ... Arc created: (ID:a1) t4 -> p4 
+[2022-12-21 08:31:22,773] 2329 DEBUG FILE_LOGGER:  ... Arc created: (ID:a16) t4 -> p14 
+[2022-12-21 08:31:22,773] 2329 DEBUG FILE_LOGGER:  ... Arc created: (ID:a13) p2 -> t4 
+[2022-12-21 08:31:22,773] 2329 DEBUG FILE_LOGGER:  ... Arc created: (ID:a265) t6 -> p6 
+[2022-12-21 08:31:22,777] 2333 DEBUG FILE_LOGGER:  ... Arc created: (ID:a291) p13 -> t6 
+[2022-12-21 08:31:22,777] 2333 DEBUG FILE_LOGGER:  ... Arc created: (ID:a11) p12 -> t6 
+[2022-12-21 08:31:22,777] 2333 DEBUG FILE_LOGGER:  ... Arc created: (ID:a22) t6 -> p6 
+[2022-12-21 08:31:22,777] 2333 DEBUG FILE_LOGGER:  ... Arc created: (ID:a25) t6 -> p6 
+[2022-12-21 08:31:22,777] 2333 DEBUG FILE_LOGGER:  ... Arc created: (ID:a19) p14 -> t6 
+[2022-12-21 08:31:23,052] 2608 DEBUG EDITOR_LOGGER: Net updated. (32 ms)
+[2022-12-21 08:31:23,060] 2616 DEBUG EDITOR_LOGGER: Net updated. (8 ms)
+[2022-12-21 08:31:23,060] 2616 DEBUG FILE_LOGGER: ##### END PNML IMPORT Version (1.3.2) ##### (1173 ms)
+[2022-12-21 08:31:23,063] 2619  INFO CONFIG_LOGGER: Setting current working directory: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs
+[2022-12-21 08:31:23,063] 2619  INFO FILE_LOGGER: Petrinet loaded from file: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs\IM-model.pnml
+[2022-12-21 08:31:33,465] 13021  INFO CONFIG_LOGGER: Configuration successfully saved to: C:\Users\palma\.WoPeD-3.8.0\WoPeDconfig.xml
+[2022-12-21 08:31:33,465] 13021  INFO GUI_LOGGER: EXIT WoPeD
+[2022-12-21 08:31:51,367] 0  INFO GUI_LOGGER: INIT APPLICATION
+[2022-12-21 08:31:51,427] 60  INFO CORE_LOGGER: START INIT Application
+[2022-12-21 08:31:51,443] 76  INFO CONFIG_LOGGER: Setting default home directory: C:\Users\palma\.WoPeD-3.8.0\nets\
+[2022-12-21 08:31:51,443] 76  INFO CONFIG_LOGGER: Loading configuration from: C:\Users\palma\.WoPeD-3.8.0\WoPeDconfig.xml.
+[2022-12-21 08:31:51,748] 381  INFO CONFIG_LOGGER: Setting Locale to en_US
+[2022-12-21 08:31:51,752] 385  INFO CONFIG_LOGGER: Setting home directory: C:\Users\palma\.WoPeD-3.8.0\nets\
+[2022-12-21 08:31:51,752] 385  INFO CONFIG_LOGGER: Setting current working directory: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs
+[2022-12-21 08:31:51,812] 445  INFO CONFIG_LOGGER: Configuration successfully loaded.
+[2022-12-21 08:31:51,820] 453  WARN CONFIG_LOGGER: Configuration file not found: C:\Users\palma\.WoPeD-3.8.0\WoPeDmetrics.xml. Using built-in settings.
+[2022-12-21 08:31:51,848] 481  INFO CONFIG_LOGGER: Configuration successfully loaded.
+[2022-12-21 08:31:51,868] 501  INFO CORE_LOGGER: Look-And-Feel set to com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+[2022-12-21 08:31:52,549] 1182  INFO GUI_LOGGER: END  INIT Application
+[2022-12-21 08:31:52,663] 1296 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Import.text
+[2022-12-21 08:31:52,663] 1296 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Import.tooltip
+[2022-12-21 08:31:52,667] 1300 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Export.text
+[2022-12-21 08:31:52,667] 1300 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Export.tooltip
+[2022-12-21 08:31:53,052] 1685 DEBUG QUALANALYSIS_LOGGER: -> init() org.woped.qualanalysis.coverabilitygraph.gui.CoverabilityGraphFrameController
+[2022-12-21 08:31:53,062] 1695 DEBUG QUALANALYSIS_LOGGER: <- init() org.woped.qualanalysis.coverabilitygraph.gui.CoverabilityGraphFrameController
+[2022-12-21 08:31:53,138] 1771 DEBUG FILE_LOGGER: ##### START PNML Version (1.3.2) IMPORT #####
+[2022-12-21 08:31:53,453] 2086 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (0 ms)
+[2022-12-21 08:31:53,457] 2090 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (7 ms)
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p1) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p2) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p4) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p6) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p7) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p8) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p12) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p11) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p14) imported
+[2022-12-21 08:31:53,879] 2512 DEBUG FILE_LOGGER:  ... Place (ID:p13) imported
+[2022-12-21 08:31:53,895] 2528 DEBUG FILE_LOGGER:  ... Transition (ID:t4) imported 
+[2022-12-21 08:31:53,895] 2528 DEBUG FILE_LOGGER:  ... Transition (ID:t5) imported 
+[2022-12-21 08:31:53,899] 2532 DEBUG FILE_LOGGER:  ... Transition (ID:t6) imported 
+[2022-12-21 08:31:53,899] 2532 DEBUG FILE_LOGGER:  ... Transition (ID:t7) imported 
+[2022-12-21 08:31:53,899] 2532 DEBUG FILE_LOGGER:  ... Transition (ID:t13) imported 
+[2022-12-21 08:31:53,903] 2536 DEBUG FILE_LOGGER:  ... Transition (ID:t1) imported 
+[2022-12-21 08:31:53,903] 2536 DEBUG FILE_LOGGER:  ... Transition (ID:t2) imported 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a261) p1 -> t1 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a262) t1 -> p2 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a10) t5 -> p12 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a273) p11 -> t13 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a286) t13 -> p13 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a6) p4 -> t2 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a8) t2 -> p8 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a9) p8 -> t5 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a266) p6 -> t7 
+[2022-12-21 08:31:53,915] 2548 DEBUG FILE_LOGGER:  ... Arc created: (ID:a267) t7 -> p7 
+[2022-12-21 08:31:53,919] 2552 DEBUG FILE_LOGGER:  ... Arc created: (ID:a263) p2 -> t4 
+[2022-12-21 08:31:53,919] 2552 DEBUG FILE_LOGGER:  ... Arc created: (ID:a276) t4 -> p11 
+[2022-12-21 08:31:53,919] 2552 DEBUG FILE_LOGGER:  ... Arc created: (ID:a3) p2 -> t4 
+[2022-12-21 08:31:53,919] 2552 DEBUG FILE_LOGGER:  ... Arc created: (ID:a1) t4 -> p4 
+[2022-12-21 08:31:53,919] 2552 DEBUG FILE_LOGGER:  ... Arc created: (ID:a16) t4 -> p14 
+[2022-12-21 08:31:53,923] 2556 DEBUG FILE_LOGGER:  ... Arc created: (ID:a13) p2 -> t4 
+[2022-12-21 08:31:53,923] 2556 DEBUG FILE_LOGGER:  ... Arc created: (ID:a265) t6 -> p6 
+[2022-12-21 08:31:53,931] 2564 DEBUG FILE_LOGGER:  ... Arc created: (ID:a291) p13 -> t6 
+[2022-12-21 08:31:53,931] 2564 DEBUG FILE_LOGGER:  ... Arc created: (ID:a11) p12 -> t6 
+[2022-12-21 08:31:53,931] 2564 DEBUG FILE_LOGGER:  ... Arc created: (ID:a22) t6 -> p6 
+[2022-12-21 08:31:53,931] 2564 DEBUG FILE_LOGGER:  ... Arc created: (ID:a25) t6 -> p6 
+[2022-12-21 08:31:53,931] 2564 DEBUG FILE_LOGGER:  ... Arc created: (ID:a19) p14 -> t6 
+[2022-12-21 08:31:54,059] 2692 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:31:54,063] 2696 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:31:54,063] 2696 DEBUG FILE_LOGGER: ##### END PNML IMPORT Version (1.3.2) ##### (925 ms)
+[2022-12-21 08:31:54,067] 2700  INFO CONFIG_LOGGER: Setting current working directory: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs
+[2022-12-21 08:31:54,067] 2700  INFO FILE_LOGGER: Petrinet loaded from file: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs\IM-model - Copy.pnml
+[2022-12-21 08:31:59,542] 8175 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:32:03,772] 12405 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:32:03,825] 12458 DEBUG EDITOR_LOGGER: Net updated. (24 ms)
+[2022-12-21 08:32:10,001] 18634 DEBUG EDITOR_LOGGER: transformTransition()
+[2022-12-21 08:32:10,009] 18642 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:32:10,045] 18678 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:32:13,625] 22258 DEBUG EDITOR_LOGGER: transformTransition()
+[2022-12-21 08:32:13,633] 22266 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:32:13,669] 22302 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:32:36,007] 44640 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:32:36,031] 44664 DEBUG EDITOR_LOGGER: Net updated. (12 ms)
+[2022-12-21 08:33:00,638] 69271 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:33:00,674] 69307 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:33:08,877] 77510 DEBUG EDITOR_LOGGER: Net updated. (1 ms)
+[2022-12-21 08:33:08,916] 77549 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (8 ms)
+[2022-12-21 08:33:08,916] 77549 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (14 ms)
+[2022-12-21 08:33:08,932] 77565  INFO FILE_LOGGER: Local WoPeD analysis started.
+[2022-12-21 08:33:10,603] 79236 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:33:10,622] 79255 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (26 ms)
+[2022-12-21 08:33:10,622] 79255 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (10 ms)
+[2022-12-21 08:33:10,630] 79263 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:33:10,635] 79268 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (6 ms)
+[2022-12-21 08:33:10,635] 79268 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (11 ms)
+[2022-12-21 08:33:10,639] 79272  INFO FILE_LOGGER: Local WoPeD analysis started.
+[2022-12-21 08:33:12,098] 80731 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:33:12,110] 80743 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (8 ms)
+[2022-12-21 08:33:12,110] 80743 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (13 ms)
+[2022-12-21 08:33:12,118] 80751 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:33:12,146] 80779 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (9 ms)
+[2022-12-21 08:33:12,146] 80779 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (41 ms)
+[2022-12-21 08:33:12,154] 80787  INFO FILE_LOGGER: Local WoPeD analysis started.
+[2022-12-21 08:33:13,030] 81663 DEBUG EDITOR_LOGGER: ACTIVATE Understandability 
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: PXORJOIN Handle Pairs calculated. (16 ms)
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: XORSPLITP Handle Pairs calculated. (0 ms)
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: XORSPLITJOIN Handle Pairs calculated. (0 ms)
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: ANDSPLITJOIN Handle Pairs calculated. (0 ms)
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: ANDSPLITT Handle Pairs calculated. (0 ms)
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: TANDJOIN Handle Pairs calculated. (11 ms)
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: Calculating flow from 't4' to 't6'
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: Resulting flow = 2
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: TT Handle Pairs calculated. (1225 ms)
+[2022-12-21 08:33:13,034] 81667 DEBUG QUALANALYSIS_LOGGER: PP Handle Pairs calculated. (14 ms)
+[2022-12-21 08:33:13,764] 82397 DEBUG EDITOR_LOGGER: DEACTIVATE Understandability 
+[2022-12-21 08:33:14,525] 83158 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:33:14,533] 83166 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (6 ms)
+[2022-12-21 08:33:14,533] 83166 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (9 ms)
+[2022-12-21 08:33:14,533] 83166 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:33:14,545] 83178 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (9 ms)
+[2022-12-21 08:33:14,545] 83178 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (13 ms)
+[2022-12-21 08:33:14,553] 83186  INFO FILE_LOGGER: Local WoPeD analysis started.
+[2022-12-21 08:33:21,535] 90168 DEBUG FILE_LOGGER: ##### START PNML EXPORT #####
+[2022-12-21 08:33:21,559] 90192 DEBUG FILE_LOGGER:    ... Transition (ID:t4) set
+[2022-12-21 08:33:21,559] 90192 DEBUG FILE_LOGGER:    ... Place (ID:p1) set
+[2022-12-21 08:33:21,559] 90192 DEBUG FILE_LOGGER:    ... Place (ID:p2) set
+[2022-12-21 08:33:21,559] 90192 DEBUG FILE_LOGGER:    ... Transition (ID:t6) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Transition (ID:t7) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Place (ID:p3) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Place (ID:p4) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Place (ID:p6) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Place (ID:p7) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Place (ID:p14) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Transition (ID:t1) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Transition (ID:t2) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER:    ... Arc (ID:a261( p1 -> t1) set
+[2022-12-21 08:33:21,563] 90196 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a262( t1 -> p2) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a263( p2 -> t4) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a16( t4 -> p14) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a19( p14 -> t6) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a5( t4 -> p3) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a6( p3 -> t2) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a7( t2 -> p4) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a8( p4 -> t6) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a265( t6 -> p6) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a266( p6 -> t7) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER:    ... Arc (ID:a267( t7 -> p7) set
+[2022-12-21 08:33:21,567] 90200 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:33:21,599] 90232 DEBUG FILE_LOGGER: ##### END PNML EXPORT ##### (64 ms)
+[2022-12-21 08:33:21,599] 90232  INFO FILE_LOGGER: Petrinet saved in file: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs\IM-model - Copy.pnml
+[2022-12-21 08:33:21,603] 90236  INFO CONFIG_LOGGER: Setting current working directory: null
+[2022-12-21 08:33:22,449] 91082  INFO CONFIG_LOGGER: Configuration successfully saved to: C:\Users\palma\.WoPeD-3.8.0\WoPeDconfig.xml
+[2022-12-21 08:33:22,449] 91082  INFO GUI_LOGGER: EXIT WoPeD
+[2022-12-21 08:39:09,120] 0  INFO GUI_LOGGER: INIT APPLICATION
+[2022-12-21 08:39:09,180] 60  INFO CORE_LOGGER: START INIT Application
+[2022-12-21 08:39:09,192] 72  INFO CONFIG_LOGGER: Setting default home directory: C:\Users\palma\.WoPeD-3.8.0\nets\
+[2022-12-21 08:39:09,192] 72  INFO CONFIG_LOGGER: Loading configuration from: C:\Users\palma\.WoPeD-3.8.0\WoPeDconfig.xml.
+[2022-12-21 08:39:09,402] 282  INFO CONFIG_LOGGER: Setting Locale to en_US
+[2022-12-21 08:39:09,406] 286  INFO CONFIG_LOGGER: Setting home directory: C:\Users\palma\.WoPeD-3.8.0\nets\
+[2022-12-21 08:39:09,406] 286  INFO CONFIG_LOGGER: Setting current working directory: null
+[2022-12-21 08:39:09,406] 286  INFO CONFIG_LOGGER: Setting current working directory: C:\Users\palma\.WoPeD-3.8.0\nets\
+[2022-12-21 08:39:09,482] 362  INFO CONFIG_LOGGER: Configuration successfully loaded.
+[2022-12-21 08:39:09,504] 384  WARN CONFIG_LOGGER: Configuration file not found: C:\Users\palma\.WoPeD-3.8.0\WoPeDmetrics.xml. Using built-in settings.
+[2022-12-21 08:39:09,552] 432  INFO CONFIG_LOGGER: Configuration successfully loaded.
+[2022-12-21 08:39:09,580] 460  INFO CORE_LOGGER: Look-And-Feel set to com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+[2022-12-21 08:39:10,223] 1103  INFO GUI_LOGGER: END  INIT Application
+[2022-12-21 08:39:10,324] 1204 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Import.text
+[2022-12-21 08:39:10,324] 1204 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Import.tooltip
+[2022-12-21 08:39:10,328] 1208 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Export.text
+[2022-12-21 08:39:10,328] 1208 DEBUG TRANSLATIONS_LOGGER: Resource not found: Apromore.UI.TextBand.Export.tooltip
+[2022-12-21 08:39:10,743] 1623 DEBUG QUALANALYSIS_LOGGER: -> init() org.woped.qualanalysis.coverabilitygraph.gui.CoverabilityGraphFrameController
+[2022-12-21 08:39:10,777] 1657 DEBUG QUALANALYSIS_LOGGER: <- init() org.woped.qualanalysis.coverabilitygraph.gui.CoverabilityGraphFrameController
+[2022-12-21 08:39:10,853] 1733 DEBUG FILE_LOGGER: ##### START PNML Version (1.3.2) IMPORT #####
+[2022-12-21 08:39:11,275] 2155 DEBUG QUALANALYSIS_LOGGER: PT Handle Pairs calculated. (0 ms)
+[2022-12-21 08:39:11,275] 2155 DEBUG QUALANALYSIS_LOGGER: TP Handle Pairs calculated. (51 ms)
+[2022-12-21 08:39:11,819] 2699 DEBUG FILE_LOGGER:  ... Place (ID:p1) imported
+[2022-12-21 08:39:11,819] 2699 DEBUG FILE_LOGGER:  ... Place (ID:p2) imported
+[2022-12-21 08:39:11,819] 2699 DEBUG FILE_LOGGER:  ... Place (ID:p3) imported
+[2022-12-21 08:39:11,819] 2699 DEBUG FILE_LOGGER:  ... Place (ID:p4) imported
+[2022-12-21 08:39:11,819] 2699 DEBUG FILE_LOGGER:  ... Place (ID:p6) imported
+[2022-12-21 08:39:11,819] 2699 DEBUG FILE_LOGGER:  ... Place (ID:p7) imported
+[2022-12-21 08:39:11,819] 2699 DEBUG FILE_LOGGER:  ... Place (ID:p14) imported
+[2022-12-21 08:39:11,831] 2711 DEBUG FILE_LOGGER:  ... Transition (ID:t4) imported 
+[2022-12-21 08:39:11,831] 2711 DEBUG FILE_LOGGER:  ... Transition (ID:t6) imported 
+[2022-12-21 08:39:11,831] 2711 DEBUG FILE_LOGGER:  ... Transition (ID:t7) imported 
+[2022-12-21 08:39:11,831] 2711 DEBUG FILE_LOGGER:  ... Transition (ID:t1) imported 
+[2022-12-21 08:39:11,831] 2711 DEBUG FILE_LOGGER:  ... Transition (ID:t2) imported 
+[2022-12-21 08:39:11,843] 2723 DEBUG FILE_LOGGER:  ... Arc created: (ID:a261) p1 -> t1 
+[2022-12-21 08:39:11,843] 2723 DEBUG FILE_LOGGER:  ... Arc created: (ID:a262) t1 -> p2 
+[2022-12-21 08:39:11,843] 2723 DEBUG FILE_LOGGER:  ... Arc created: (ID:a263) p2 -> t4 
+[2022-12-21 08:39:11,843] 2723 DEBUG FILE_LOGGER:  ... Arc created: (ID:a16) t4 -> p14 
+[2022-12-21 08:39:11,847] 2727 DEBUG FILE_LOGGER:  ... Arc created: (ID:a19) p14 -> t6 
+[2022-12-21 08:39:11,847] 2727 DEBUG FILE_LOGGER:  ... Arc created: (ID:a5) t4 -> p3 
+[2022-12-21 08:39:11,847] 2727 DEBUG FILE_LOGGER:  ... Arc created: (ID:a6) p3 -> t2 
+[2022-12-21 08:39:11,847] 2727 DEBUG FILE_LOGGER:  ... Arc created: (ID:a7) t2 -> p4 
+[2022-12-21 08:39:11,847] 2727 DEBUG FILE_LOGGER:  ... Arc created: (ID:a8) p4 -> t6 
+[2022-12-21 08:39:11,847] 2727 DEBUG FILE_LOGGER:  ... Arc created: (ID:a265) t6 -> p6 
+[2022-12-21 08:39:11,847] 2727 DEBUG FILE_LOGGER:  ... Arc created: (ID:a266) p6 -> t7 
+[2022-12-21 08:39:11,847] 2727 DEBUG FILE_LOGGER:  ... Arc created: (ID:a267) t7 -> p7 
+[2022-12-21 08:39:12,123] 3003 DEBUG EDITOR_LOGGER: Net updated. (56 ms)
+[2022-12-21 08:39:12,147] 3027 DEBUG EDITOR_LOGGER: Net updated. (20 ms)
+[2022-12-21 08:39:12,151] 3031 DEBUG FILE_LOGGER: ##### END PNML IMPORT Version (1.3.2) ##### (1298 ms)
+[2022-12-21 08:39:12,151] 3031  INFO CONFIG_LOGGER: Setting current working directory: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs
+[2022-12-21 08:39:12,151] 3031  INFO FILE_LOGGER: Petrinet loaded from file: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs\IM-model.pnml
+[2022-12-21 08:39:19,169] 10049 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:39:20,692] 11572 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:39:21,175] 12055 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:39:22,392] 13272 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:39:23,059] 13939 DEBUG EDITOR_LOGGER: Net updated. (4 ms)
+[2022-12-21 08:39:24,047] 14927 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:39:26,546] 17426 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:39:26,574] 17454 DEBUG EDITOR_LOGGER: Net updated. (0 ms)
+[2022-12-21 08:39:29,724] 20604 DEBUG FILE_LOGGER: ##### START PNML EXPORT #####
+[2022-12-21 08:39:29,752] 20632 DEBUG FILE_LOGGER:    ... Transition (ID:t4) set
+[2022-12-21 08:39:29,752] 20632 DEBUG FILE_LOGGER:    ... Place (ID:p1) set
+[2022-12-21 08:39:29,752] 20632 DEBUG FILE_LOGGER:    ... Place (ID:p2) set
+[2022-12-21 08:39:29,752] 20632 DEBUG FILE_LOGGER:    ... Place (ID:p14) set
+[2022-12-21 08:39:29,752] 20632 DEBUG FILE_LOGGER:    ... Transition (ID:t6) set
+[2022-12-21 08:39:29,752] 20632 DEBUG FILE_LOGGER:    ... Transition (ID:t7) set
+[2022-12-21 08:39:29,752] 20632 DEBUG FILE_LOGGER:    ... Place (ID:p6) set
+[2022-12-21 08:39:29,752] 20632 DEBUG FILE_LOGGER:    ... Place (ID:p7) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Transition (ID:t1) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Arc (ID:a261( p1 -> t1) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Arc (ID:a262( t1 -> p2) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Arc (ID:a263( p2 -> t4) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Arc (ID:a16( t4 -> p14) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Arc (ID:a19( p14 -> t6) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Arc (ID:a265( t6 -> p6) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Arc (ID:a266( p6 -> t7) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER:    ... Arc (ID:a267( t7 -> p7) set
+[2022-12-21 08:39:29,756] 20636 DEBUG FILE_LOGGER: ... Arc label position: X = 500.0 / Y = 12.0
+[2022-12-21 08:39:29,768] 20648 DEBUG FILE_LOGGER: ##### END PNML EXPORT ##### (44 ms)
+[2022-12-21 08:39:29,768] 20648  INFO FILE_LOGGER: Petrinet saved in file: C:\Users\palma\Documents\projects\compliance_assessment_system\ComplianceAssessmentSystem\inputs\IM-model.pnml
+[2022-12-21 08:39:29,768] 20648  INFO CONFIG_LOGGER: Setting current working directory: null
+[2022-12-21 08:39:30,899] 21779  INFO CONFIG_LOGGER: Configuration successfully saved to: C:\Users\palma\.WoPeD-3.8.0\WoPeDconfig.xml
+[2022-12-21 08:39:30,899] 21779  INFO GUI_LOGGER: EXIT WoPeD
