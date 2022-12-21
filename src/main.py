@@ -6,6 +6,7 @@ import src.utils.process_mining as pm
 import src.utils.format_dataset as dat
 import src.models.regression as reg
 import src.models.probability as prob
+import src.validation as val
 
 """
 Inputs of the system
@@ -46,3 +47,7 @@ if __name__ == "__main__":
     mod_4 = prob.causal_probability(log_by_case,case_k,[cost_k]+features,all_deviations,all_activities)
 
     dat.write_models_parameters([mod_1,mod_2,mod_3,mod_4],parameter_file)
+
+    val.compare_models(log_by_case, case_k, cost_k, parameter_file)
+    val.make_report(log_by_case, case_k, cost_k, parameter_file)
+    

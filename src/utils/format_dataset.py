@@ -15,8 +15,6 @@ def format_dataset_by_incidents(original_log, alignment_file, separator, case_k,
 
     df_merged.to_csv(alignment_file,index=False)
 
-
-# TODO: METTERE I SINGOLI ARCHI COME DEVIAZIONI
 def detect_process_elements(log_by_case):
     with open(log_by_case) as csv_r:
         reader = csv.DictReader(csv_r)

@@ -70,7 +70,8 @@ def compute_trace_alignment(log, modelFile, case_k, alignment_file):
         resAlignments.append({
             case_k: log[i].__getitem__(0)[case_k],
             "trace": traceFormat,
-            "fitness": trace["fitness"]
+            "fitness": trace["fitness"],
+            "fitness_cost": 1-trace["fitness"]
         })
         i+=1
 
