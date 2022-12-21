@@ -16,30 +16,32 @@ if __name__ == "__main__":
     print("Start TEST")
 
     ## First Configuration TEST
-    # print("Start TRACE ALIGNMENT test ...")
-    # log = pm.getLog(LOG,";", "incident_id", "event", "timestamp")
-    # if log == False:
-    #     print("Failed log parsing test")
-    # if pm.compute_trace_alignment(log, MODEL, "incident_id", "test.csv") == False:
-    #     print("Failed trace alignment test")
-    # else:
-    #     os.remove("test.csv")
-    # print("... PASSED")
+    print("Start TRACE ALIGNMENT test ...")
+    log = pm.getLog(LOG,";", "incident_id", "event", "timestamp")
+    if log == False:
+        print("Failed log parsing test")
+    if pm.compute_trace_alignment(log, MODEL, "incident_id", "test.csv") == False:
+        print("Failed trace alignment test")
+    else:
+        os.remove("test.csv")
+    print("... PASSED")
 
-    # print("Start FORMAT DATASET test ...")
-    # dat.format_dataset_by_incidents(LOG,ALIGNMENT,"incident_id",";")
-    # print("... PASSED")
+    print("Start FORMAT DATASET test ...")
+    dat.format_dataset_by_incidents(LOG,ALIGNMENT,"incident_id",";")
+    print("... PASSED")
 
     ## Automatic models TEST
     acts, devs = dat.detect_process_elements(ALIGNMENT)
-    # p1 = reg.linear_regression(ALIGNMENT,"incident_id","fitness_cost",devs)
-    # print(p1)
-    # p2 = reg.extra_trees_regression(ALIGNMENT,"incident_id","fitness_cost",devs)
-    # print(p2)
-    # p3 = prob.causal_probability(ALIGNMENT,"incident_id",["fitness_cost"],devs,acts)
-    # print(p3)
+    p1 = reg.linear_regression(ALIGNMENT,"incident_id","fitness_cost",devs)
+    print(p1)
+    p2 = reg.extra_trees_regression(ALIGNMENT,"incident_id","fitness_cost",devs)
+    print(p2)
+    p3 = prob.causal_probability(ALIGNMENT,"incident_id",["fitness_cost"],devs,acts)
+    print(p3)
 
-    ## Validation and report TEST
-    # val.compare_models(ALIGNMENT, "incident_id", "fitness_cost", PARAMFILE)
-    val.make_report(ALIGNMENT, "incident_id", "fitness_cost", "category", PARAMFILE, devs)
+    # Validation and report TEST
+    val.compare_models(ALIGNMENT, "incident_id", "fitness_cost", PARAMFILE)
+    val.make_report(ALIGNMENT, "incident_id", "fitness_cost", "category", PARAMFILE, devs, "foo.pdf")
+
+    print("END TEST")
     

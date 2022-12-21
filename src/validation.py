@@ -3,6 +3,7 @@ import csv
 import numpy as np
 import sklearn.metrics as metrics
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
 
 def normalize_df_col(df, cols):
     for c in cols:
@@ -74,7 +75,7 @@ def compare_models(log_by_case, case_k, cost_k, parameter_file):
 """
 This function selects the model with minimum error and produce the final report
 """
-def make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, deviations):
+def make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, deviations, report_file):
     df_param = pd.read_csv(parameter_file)
     best_model = df_param[df_param["mse"] == df_param["mse"].min()].to_dict("records")[0]
 
@@ -82,6 +83,8 @@ def make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, deviations):
     df_model = compute_cost(log_by_case, case_k, best_model)
     df = pd.merge(df_log, df_model, how='inner', on=[case_k])
     
+    final_report = PdfPages(report_file)
+
     ## PLOT1: GT vs cost model distribution
     sortedDf = df.sort_values(by=[cost_k])
     cost_gt = sortedDf[cost_k]
@@ -97,8 +100,8 @@ def make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, deviations):
     plt.plot(x, normalModel.tolist(), label = "cost model")
     plt.plot(x, normalGt.tolist(), label = cost_k+"-based cost")
     plt.legend()
-    # plt.savefig('trend-cost.png', bbox_inches='tight')
-    plt.show()
+    final_report.savefig(fig)
+    # plt.show()
 
     ## PLOT2: cost model distribution
     costDf = df["cost_model"]
@@ -107,8 +110,8 @@ def make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, deviations):
     fig.suptitle('Non-compliance cost distribution')
     ax.set_xlabel("Cost")
     ax.boxplot(normalCost)
-    # plt.savefig('box-cost.png', bbox_inches='tight')
-    plt.show()
+    final_report.savefig(fig)
+    # plt.show()
 
     ## PLOT3: Barchart quantity low-medium-high-critical
     dfCat = pd.DataFrame()
@@ -118,26 +121,34 @@ def make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, deviations):
     
     data = severityDf.values()
     labels = list(severityDf.keys())
-    plt.xticks(range(len(data)), labels)
-    plt.xlabel('Severity')
-    plt.ylabel('Number of occurrences')
-    plt.title('Non-compliance severity distribution')
-    plt.bar(range(len(data)), data, color=['#1a9641','#a6d96a','#ffffbf','#fdae61','#d7191c'])
+    fig, ax = plt.subplots()
+    ax.set_xticks(range(len(data)), labels)
+    ax.set_xlabel('Severity')
+    ax.set_ylabel('Number of occurrences')
+    ax.set_title('Non-compliance severity distribution')
+    ax.bar(range(len(data)), data, color=['#1a9641','#a6d96a','#ffffbf','#fdae61','#d7191c'])
     for i in range(len(labels)):
-            plt.text(i, severityDf[labels[i]], severityDf[labels[i]], ha = 'center')
-    # plt.savefig('severity-cost.png', bbox_inches='tight')
-    plt.show()
+            ax.text(i, severityDf[labels[i]], severityDf[labels[i]], ha = 'center')
+    final_report.savefig(fig)
+    # plt.show()
 
     ## PLOT 4: Table with all deviations weights
-    # # TODO: PRINT PARAMETRI
-    # fig, ax = plt.subplots()
-    # # hide axes
-    # fig.patch.set_visible(False)
-    # ax.axis('off')
-    # ax.axis('tight')
-    # df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
-    # ax.table(cellText=df.values, colLabels=df.columns, loc='center')
-    # fig.tight_layout()
+    del best_model["model_id"]
+    del best_model["mse"]
+    del best_model["mae"]
+    del best_model["mad"]
+    sortedDeviations = {k: round(v,2) for k, v in sorted(best_model.items(), key=lambda item: item[1], reverse=True)}
+    fig, ax = plt.subplots(figsize=[20, 7])
+    fig.patch.set_visible(False)
+    ax.axis('off')
+    ax.axis('tight')
+    df_sortedDeviations = pd.DataFrame.from_dict([sortedDeviations])
+    table = ax.table(cellText=df_sortedDeviations.values, 
+    colLabels=df_sortedDeviations.columns, loc='center')
+    table.auto_set_font_size(False)
+    table.set_fontsize(12)
+    fig.tight_layout()
+    final_report.savefig(fig)
     # plt.show()
 
     ## PLOT 5: Analysis per activity and deviation category (occurrences)
@@ -180,8 +191,8 @@ def make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, deviations):
     axs[2].bar(mismK, mismVal, color=['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00'])
     for i in range(len(mismK)):
         axs[2].text(i, dictCount[mismK[i]], dictCount[mismK[i]], ha = 'center')
-    # plt.savefig('deviation_occurrences.png', bbox_inches='tight')
-    plt.show()
+    final_report.savefig(fig)
+    # plt.show()
 
     ## PLOT 6: Analysis of critical incidents
     grouped_by_category = df.groupby([cat_k])
@@ -206,5 +217,8 @@ def make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, deviations):
     for i in range(len(cats)):
         ax.text(i, sortedDictCat[cats[i]], sortedDictCat[cats[i]], ha = 'center')
     ax.set_xticklabels(cats, rotation=45, ha='right')
-    # plt.savefig('categories.png', bbox_inches='tight')
-    plt.show()
+    final_report.savefig(fig)
+    # plt.show()
+
+    final_report.close()
+    

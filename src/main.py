@@ -20,6 +20,7 @@ ts_k = conf.timestamp_key
 
 features = conf.features
 cost_k = conf.cost_key
+cat_k = conf.category_key
 first_run = conf.first_run
 
 """
@@ -27,6 +28,7 @@ Auxiliary support
 """
 log_by_case = conf.data_by_case
 parameter_file = conf.parameters_file
+report_file = conf.report_file
 
 if __name__ == "__main__":
     if first_run:
@@ -49,5 +51,4 @@ if __name__ == "__main__":
     dat.write_models_parameters([mod_1,mod_2,mod_3,mod_4],parameter_file)
 
     val.compare_models(log_by_case, case_k, cost_k, parameter_file)
-    val.make_report(log_by_case, case_k, cost_k, parameter_file)
-    
+    val.make_report(log_by_case, case_k, cost_k, cat_k, parameter_file, all_deviations, report_file)
