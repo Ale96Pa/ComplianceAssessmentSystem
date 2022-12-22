@@ -1,4 +1,4 @@
-"""IM
+"""
 Inputs
 """
 log = "inputs/IM-log.csv"
@@ -25,4 +25,12 @@ report_file = "src/dataset/results/report.pdf"
 """
 Configuration parameters
 """
-first_run=False
+first_run=True
+
+"""
+Benchmark parameters
+"""
+alpha = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
+log_by_case_benchmark = "test/benchmark/log_by_case_bmk.csv"
+ground_truth_file = "test/benchmark/gorund_truths.csv"
+parameters_gts = "test/benchmark/parameters_gt.csv"

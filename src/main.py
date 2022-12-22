@@ -41,6 +41,7 @@ if __name__ == "__main__":
             print("Error while performing trace alignment")
             exit()
         dat.format_dataset_by_incidents(LOG,log_by_case,sep,case_k,act_k,ts_k)
+        print("End configuration")
     
     all_activities, all_deviations = dat.detect_process_elements(log_by_case)
     mod_1 = reg.linear_regression(log_by_case,case_k,cost_k,all_deviations)
