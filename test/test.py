@@ -9,6 +9,7 @@ import src.models.probability as prob
 import src.validation as val
 
 import ground_truths as gt
+import benchmark_analysis as bmk
 
 LOG = conf.log
 MODEL = conf.model
@@ -16,37 +17,35 @@ ALIGNMENT = conf.data_by_case
 PARAMFILE = conf.parameters_file
 
 if __name__ == "__main__":
-    # print("Start TEST SYSTEM")
+    print("Start TEST SYSTEM")
+    ## First Configuration TEST
+    print("Start TRACE ALIGNMENT test ...")
+    log = pm.getLog(LOG,";", "incident_id", "event", "timestamp")
+    if log == False:
+        print("Failed log parsing test")
+    if pm.compute_trace_alignment(log, MODEL, "incident_id", "test.csv") == False:
+        print("Failed trace alignment test")
+    else:
+        os.remove("test.csv")
+    print("... PASSED")
 
-    # ## First Configuration TEST
-    # print("Start TRACE ALIGNMENT test ...")
-    # log = pm.getLog(LOG,";", "incident_id", "event", "timestamp")
-    # if log == False:
-    #     print("Failed log parsing test")
-    # if pm.compute_trace_alignment(log, MODEL, "incident_id", "test.csv") == False:
-    #     print("Failed trace alignment test")
-    # else:
-    #     os.remove("test.csv")
-    # print("... PASSED")
+    print("Start FORMAT DATASET test ...")
+    dat.format_dataset_by_incidents(LOG,ALIGNMENT,"incident_id",";")
+    print("... PASSED")
 
-    # print("Start FORMAT DATASET test ...")
-    # dat.format_dataset_by_incidents(LOG,ALIGNMENT,"incident_id",";")
-    # print("... PASSED")
+    ## Automatic models TEST
+    acts, devs = dat.detect_process_elements(ALIGNMENT)
+    p1 = reg.linear_regression(ALIGNMENT,"incident_id","fitness_cost",devs)
+    print(p1)
+    p2 = reg.extra_trees_regression(ALIGNMENT,"incident_id","fitness_cost",devs)
+    print(p2)
+    p3 = prob.causal_probability(ALIGNMENT,"incident_id",["fitness_cost"],devs,acts)
+    print(p3)
 
-    # ## Automatic models TEST
-    # acts, devs = dat.detect_process_elements(ALIGNMENT)
-    # p1 = reg.linear_regression(ALIGNMENT,"incident_id","fitness_cost",devs)
-    # print(p1)
-    # p2 = reg.extra_trees_regression(ALIGNMENT,"incident_id","fitness_cost",devs)
-    # print(p2)
-    # p3 = prob.causal_probability(ALIGNMENT,"incident_id",["fitness_cost"],devs,acts)
-    # print(p3)
-
-    # # Validation and report TEST
-    # val.compare_models(ALIGNMENT, "incident_id", "fitness_cost", PARAMFILE)
-    # val.make_report(ALIGNMENT, "incident_id", "fitness_cost", "category", PARAMFILE, devs, "foo.pdf")
-
-    # print("END TEST SYSTEM")
+    # Validation and report TEST
+    val.compare_models(ALIGNMENT, "incident_id", "fitness_cost", PARAMFILE)
+    val.make_report(ALIGNMENT, "incident_id", "fitness_cost", "category", PARAMFILE, devs, "foo.pdf")
+    print("END TEST SYSTEM")
 
     print("START TEST BENCHMARK")
     a = gt.build_gt1(ALIGNMENT,"incident_id")
@@ -62,8 +61,10 @@ if __name__ == "__main__":
     df_gts = pd.merge(df_gts, d, how='inner', on=["incident_id"])
     e = gt.build_gt5(ALIGNMENT, "incident_id", numemp, pr, 1)
     df_gts = pd.merge(df_gts, e, how='inner', on=["incident_id"])
-
     print(df_gts)
 
+    bmk.create_bmk_file(conf.log_by_case_benchmark,conf.parameters_gts,
+    conf.ground_truth_file,conf.benchmark_file,"incident_id")
+    bmk.plot_bmk_analyses(conf.ground_truth_file,conf.parameters_gts,conf.benchmark_file)
     print("END TEST BENCHMARK")
     
