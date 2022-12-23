@@ -4,6 +4,7 @@ import numpy as np
 import sklearn.metrics as metrics
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
+pd.options.mode.chained_assignment = None
 
 def normalize_df_col(df, cols):
     for c in cols:
