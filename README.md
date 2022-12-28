@@ -29,6 +29,8 @@ In addition, the following configurations are settable in the file _config.py_:
 - log and model paths;
 - separator (in case of csv file with a separator different from comma), case ID attribute name (case_k), process activities attribute name(activity_key), timestamp attribute name (timestamp_key), cost attribute name (cost_key), trace category attribute name (category_key);
 
+Notice: if your dataset does not have a non-compliance cost attribute, you can ALWAYS use the "fitness_cost" attribute, automatically evaluated with trace alignment algorithms.
+
 ## Installation
 
 Download this github repositiory, set the configuration (if any) and run the command from your terminal:

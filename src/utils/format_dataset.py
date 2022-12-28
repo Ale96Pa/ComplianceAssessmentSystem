@@ -21,13 +21,13 @@ def detect_process_elements(log_by_case):
         activities = []
         deviations = []
         for row in reader:
-            all = row["trace"].split(";")
+            all = row["trace"].split(";")[:-1]
             for i in range(0,len(all)):
                 elem = all[i]
-                if len(elem) == 1:
-                    activities.append(elem)
-                if len(elem) == 2:
+                if elem[0] == "m" or elem[0] == "s" or elem[0] == "r":
                     deviations.append(elem)
+                else:
+                    activities.append(elem)
 
     activities = list(dict.fromkeys(activities))
     deviations = list(dict.fromkeys(deviations))

@@ -47,24 +47,24 @@ def compute_trace_alignment(log, modelFile, case_k, alignment_file):
 
             if j == 0 or j == len(trace["alignment"])-1:
                 if events[0] == events[1]:
-                    traceFormat+=events[0]
+                    traceFormat+=str(events[0])
                 elif events[0] == ">>":
-                    traceFormat+="s"+events[1]
+                    traceFormat+="s"+str(events[1])
                 elif events[1] == ">>":
-                    traceFormat+="r"+events[0]
+                    traceFormat+="r"+str(events[0])
                 traceFormat+=";"
             else:
                 if events[0] == events[1]:
-                    traceFormat+=events[0]
+                    traceFormat+=str(events[0])
                 elif events[0] == ">>":
-                    traceFormat+="s"+events[1]
+                    traceFormat+="s"+str(events[1])
                 elif events[1] == ">>": #repetition/mismatch
                     prev_event = trace["alignment"][j-1][0]
                     next_event = trace["alignment"][j+1][0]
                     if events[0] == prev_event or events[0] == next_event:
-                        traceFormat+="r"+events[0]
+                        traceFormat+="r"+str(events[0])
                     else:
-                        traceFormat+="m"+events[0]
+                        traceFormat+="m"+str(events[0])
                 traceFormat+=";"
 
         resAlignments.append({
