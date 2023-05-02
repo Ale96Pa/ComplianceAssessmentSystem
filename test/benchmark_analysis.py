@@ -173,19 +173,21 @@ def plot_bmk_analyses(gt_file, parameter_file, bmk_file):
     # print(df_best)
 
 import seaborn as sns
-def plot_false_positive(bmk_file):
+def plot_false_positive(bmk_file, modelID="4-"):
     df_gt = pd.read_csv(bmk_file)
     grouped_by_bmk = df_gt.groupby(["id"])
 
-    fig, axs = plt.subplots(1, 4)
-    fig.set_figwidth(18)
+    plt.rcParams.update({'font.size': 14})
+    fig, axs = plt.subplots(2, 2)
+    fig.set_figwidth(8)
     fig.set_figheight(4)
     j=0
+    i=0
     num=2
     for caseID, item in grouped_by_bmk:
         single_case_df = grouped_by_bmk.get_group(caseID)
         experient_id = list(single_case_df["model_id"])[0]
-        if "_1" not in experient_id or "3-" not in experient_id: continue
+        if "_1" not in experient_id or modelID not in experient_id: continue
     
         # single_case_df["cost_model"] = (single_case_df["cost_model"]-np.min(single_case_df["cost_model"]))/(np.max(single_case_df["cost_model"])-np.min(single_case_df["cost_model"]))
         binsP = np.percentile(single_case_df["cost_model"], [0, 50, 100])
@@ -203,22 +205,35 @@ def plot_false_positive(bmk_file):
         y_true = single_case_df["y_true"]
         TP, FP, FN, TN = 0,0,0,0
         for pp, tt in zip(y_pred, y_true):
-            if pp==tt and pp=="H": TN+=1
-            elif pp==tt and pp=="L": TP+=1
-            elif pp!=tt and pp=="L": FP+=1
-            else: FN+=1
-            # there is no case for FN, TN
+            if pp==tt and pp=="H": TP+=1
+            elif pp==tt and pp=="L": TN+=1
+            elif pp!=tt and pp=="L": FN+=1
+            else: FP+=1
         FPR = FP/(TN+FP)
 
         confusion_m = np.matrix([[TP, FP], [FN, TN]])
         annot_text = np.matrix([["TP\n"+str(TP), "FP\n"+str(FP)], ["FN\n"+str(FN), "TN\n"+str(TN)]])
-        sns.heatmap(confusion_m, linewidth=0.5,annot=annot_text,fmt="s",yticklabels=False,xticklabels=False,ax=axs[j])
-        axs[j].set_title("GT"+str(num))
+
+        print("GT"+str(num)+"accuracy ("+str(round((TP+TN)/(TP+TN+FP+FN),2))+"), precision ("+str(round(TP/(TP+FP),2))+"), recall ("+str(round(TP/(TP+FN),3))+")")
+
+        if num==2: 
+            i=0
+            j=0
+        elif num==3:
+            i=0
+            j=1
+        elif num==4:
+            i=1
+            j=0
+        else:
+            i=1
+            j=1
+        sns.heatmap(confusion_m, vmin=0,vmax=24000, linewidth=0.5,annot=annot_text,fmt="s",yticklabels=False,xticklabels=False,ax=axs[i][j],cmap="Blues")
+        axs[i][j].set_title("GT"+str(num))
         # ax.tick_params(left=False, bottom=False)
-        j+=1
         num+=1
     plt.savefig('test/benchmark/results_plots/false_positive_rate.png', bbox_inches='tight')
 
 
 if __name__ == "__main__":
-    plot_false_positive(conf.benchmark_file)
+    plot_false_positive(conf.benchmark_file, "4-")
