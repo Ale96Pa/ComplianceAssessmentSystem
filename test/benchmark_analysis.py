@@ -48,15 +48,30 @@ def get_model_name(model_id):
     if model_id == 0:
         return "Fitness"
     elif model_id == 1:
-        return "Extra Trees Regression"
+        return "ETR"
     elif model_id == 2:
-        return "Linear Regression"
+        return "LR"
     elif model_id == 3:
-        return "Causal Probability (cost)"
+        return "CP"
     else:
-        return "Causal Probability (all)"
+        return "CP (all)"
+def get_color_name(model_id):
+    if model_id == 0:
+        return "Fitness"
+    elif model_id == 1:
+        return "#984ea3"
+    elif model_id == 2:
+        return "#e41a1c"
+    elif model_id == 3:
+        return "#377eb8"
+    elif model_id == 4:
+        return "#4daf4a"
+    else:
+        return "#000000"
 
 def plot_bmk_analyses(gt_file, parameter_file, bmk_file):
+    plt.rcParams.update({'font.size': 26})
+
     gt_df = pd.read_csv(gt_file)
     df_params = pd.read_csv(parameter_file)
     df_bmk = pd.read_csv(bmk_file)
@@ -65,7 +80,7 @@ def plot_bmk_analyses(gt_file, parameter_file, bmk_file):
         if "gt" in gt and "_1" in gt:
             dic_gt[gt] = gt_df[gt].to_list()
 
-    gts = list(dic_gt.keys())
+    gts = list(dic_gt.keys())#[1:]
 
     normalDict = {}
     for gt_k in gts:
@@ -73,104 +88,138 @@ def plot_bmk_analyses(gt_file, parameter_file, bmk_file):
         normalDict[gt_k] = [float(i)/max(raw) for i in raw]
 
     ## 1A. Cost Trend between Ground Truths
-    fig, ax = plt.subplots(figsize=[20, 7])
-    fig.suptitle('Ground Truths Cost Distribution')
+    fig, ax = plt.subplots(figsize=[18, 7])
+    # fig.suptitle('Ground Truths Cost Distribution')
     for gt_k in gts:
         ax.set_xlabel(gt_k)
         ysmoothed = gaussian_filter1d(normalDict[gt_k], sigma=30)
         ticks = list(range(0, len(ysmoothed)))
-        ax.plot(ticks, ysmoothed, label=gt_k.split("_")[0])    
-    plt.legend()
-    plt.xlabel("Traces")
-    plt.ylabel("Cost")
+        ax.plot(ticks, ysmoothed, label=gt_k.split("_")[0], linewidth=2)    
+    leg = plt.legend(ncols=3)
+    for line in leg.get_lines():
+        line.set_linewidth(4.0)
+    plt.xlabel("Trace IDs")
+    plt.ylabel("Cost value")
     # plt.rcParams.update({'font.size': 22})
-    plt.savefig('test/benchmark/plots/gts_trend.png', bbox_inches='tight')
+    plt.savefig('test/benchmark/results_plots/gts_trend.png', bbox_inches='tight')
     # plt.show()
 
-    ## 2. Cost Trend against each Ground Truth    
-    fig, axs = plt.subplots(5, 1)
-    fig.set_figwidth(20)
-    fig.set_figheight(10)
-    j=0
-    for gt_k in gts:
-        ax = axs[j]
-        for i in range(1,5):
-            model_id = str(i)+"-"+gt_k
-            df = df_bmk.query("model_id == "+"'"+model_id+"'")["cost_model"]
-            normalCost = (df-df.min())/(df.max()-df.min())
-            ysmoothed = gaussian_filter1d(normalCost.to_list(), sigma=30)
-            ticks = list(range(0, len(ysmoothed)))
-            ax.plot(ticks, ysmoothed, label=get_model_name(i))
+    # ## 2. Cost Trend against each Ground Truth    
+    # fig, axs = plt.subplots(2,2)
+    # fig.set_figwidth(20)
+    # fig.set_figheight(10)
+    # j=0
+    # for gt_k in gts:
+    #     l,t=0,0
+    #     if j==0: l,t=0,1
+    #     elif j==1: l,t=0,0
+    #     elif j==2: l,t=1,0
+    #     else: l,t=1,1
+    #     ax = axs[l][t]
+    #     for i in range(1,5):
+    #         model_id = str(i)+"-"+gt_k
+    #         df = df_bmk.query("model_id == "+"'"+model_id+"'")["cost_model"]
+    #         normalCost = (df-df.min())/(df.max()-df.min())
+    #         if "4" in gt_k:# and i==2: 
+    #             normalCost= [x * 2 for x in normalCost]
+    #             ysmoothed = gaussian_filter1d(normalCost, sigma=30)
+    #         elif "3" in gt_k and i==3: 
+    #             normalCost= [x * 2 for x in normalCost]
+    #             ysmoothed = gaussian_filter1d(normalCost, sigma=30)
+    #         elif "5" in gt_k and i==3: 
+    #             normalCost= [x * 2 for x in normalCost]
+    #             ysmoothed = gaussian_filter1d(normalCost, sigma=30)
+    #         else: ysmoothed = gaussian_filter1d(normalCost.to_list(), sigma=30)
+    #         ticks = list(range(0, len(ysmoothed)))
+    #         ax.plot(ticks, ysmoothed, label=get_model_name(i), color=get_color_name(i))
 
-        df = df_bmk.query("model_id == "+"'"+model_id+"'")["gt"]
-        normalCost = (df-df.min())/(df.max()-df.min())
-        ysmoothed = gaussian_filter1d(normalCost.to_list(), sigma=30)
-        ticks = list(range(0, len(ysmoothed)))
-        ax.plot(ticks, ysmoothed, label=gt_k.split("_")[0])
-        ax.legend()
-        ax.set_xlabel("Traces")
-        ax.set_ylabel("Cost")
-        j+=1
-    plt.savefig('test/benchmark/plots/cost_vs_gt.png', bbox_inches='tight')
-    # plt.show()
+    #     df = df_bmk.query("model_id == "+"'"+model_id+"'")["gt"]
+    #     normalCost = (df-df.min())/(df.max()-df.min())
+    #     ysmoothed = gaussian_filter1d(normalCost.to_list(), sigma=30)
+    #     ticks = list(range(0, len(ysmoothed)))
+    #     if gt_k=='gt2_1': ax.plot(ticks, ysmoothed, label='gt3', color=get_color_name(gt_k))
+    #     elif gt_k=='gt3_1': ax.plot(ticks, ysmoothed, label='gt2', color=get_color_name(gt_k))
+    #     else: ax.plot(ticks, ysmoothed, label=gt_k.split("_")[0], color=get_color_name(gt_k))
+        
+    #     leg = ax.legend(fontsize='medium', ncols=3)
+    #     for line in leg.get_lines():
+    #         line.set_linewidth(4.0)
 
-    ## 3. Model Analysis for each metric
-    dict_mse = {}
-    dict_mae = {}
-    dict_med = {}
-    l_mse=[]
-    l_mae=[]
-    l_mad=[]
-    x = gt_df["gt1_1"]
-    x = (x-x.min())/(x.max()-x.min())
-    for gt in gt_df.columns:
-        if gt == "gt1_1" or gt == "incident_id":
-            continue
-        y = gt_df[gt]
-        y = (y-y.min())/(y.max()-y.min())
-        l_mse.append(metrics.mean_squared_error(y, x))
-        l_mae.append(metrics.mean_absolute_error(y, x))
-        l_mad.append(metrics.median_absolute_error(y, x))
-    dict_mse["0"] = l_mse
-    dict_mae["0"] = l_mae
-    dict_med["0"] = l_mad
+    #     if l==1: ax.set_xlabel("Trace IDs")
+    #     ax.set_ylabel("Estimated Trace Cost")
+    #     ax.set_ylim(0,0.75)
+    #     j+=1
+    # plt.savefig('test/benchmark/results_plots/cost_vs_gt.png', bbox_inches='tight')
+    # # plt.show()
 
-    for i in range(1,5):
-        mod_df = df_params[df_params["model_id"].str.contains(str(i)+"-")]
-        mod_df = mod_df[~mod_df["model_id"].str.contains("gt1")]
-        dict_mse[str(i)] = mod_df["mse"].to_list()
-        dict_mae[str(i)] = mod_df["mae"].to_list()
-        dict_med[str(i)] = mod_df["mad"].to_list()
-    list_dict = [dict_mse, dict_mae, dict_med]
+    # ## 3. Model Analysis for each metric
+    # plt.rcParams.update({'font.size': 22})
+    # dict_mse = {}
+    # dict_mae = {}
+    # dict_med = {}
+    # l_mse=[]
+    # l_mae=[]
+    # l_mad=[]
+    # x = gt_df["gt1_1"]
+    # x = (x-x.min())/(x.max()-x.min())
+    # for gt in gt_df.columns:
+    #     if gt == "gt1_1" or gt == "incident_id":
+    #         continue
+    #     y = gt_df[gt]
+    #     y = (y-y.min())/(y.max()-y.min())
+    #     l_mse.append(metrics.mean_squared_error(y, x))
+    #     l_mae.append(metrics.mean_absolute_error(y, x))
+    #     l_mad.append(metrics.median_absolute_error(y, x))
+    # dict_mse["0"] = l_mse
+    # dict_mae["0"] = l_mae
+    # dict_med["0"] = l_mad
 
-    for i in range(0,len(list_dict)):
-        if i==0:
-            err = "MSE"
-        elif i==1:
-            err = "MAE"
-        else:
-            err = "MAD"
-        plot_dict = list_dict[i]
-        fig, ax = plt.subplots()
-        fig.set_figwidth(15)
-        fig.set_figheight(7)
-        fig.suptitle(err+" distribution")
+    # for i in range(1,5):
+    #     mod_df = df_params[df_params["model_id"].str.contains(str(i)+"-")]
+    #     mod_df = mod_df[~mod_df["model_id"].str.contains("gt1")]
+    #     dict_mse[str(i)] = mod_df["mse"].to_list()
+    #     dict_mae[str(i)] = mod_df["mae"].to_list()
+    #     dict_med[str(i)] = mod_df["mad"].to_list()
+    # list_dict = [dict_mse, dict_mae, dict_med]
 
-        models=[]
-        for e in plot_dict.keys():
-            models.append(get_model_name(int(e)))
-        ax.set_xticklabels(models)
-        ax.boxplot(plot_dict.values())
-        plt.savefig('test/benchmark/plots/metrics_'+err+'.png', bbox_inches='tight')
-        # plt.show()
+    # for i in range(0,len(list_dict)):
+    #     if i==0:
+    #         err = "MSE"
+    #     elif i==1:
+    #         err = "MAE"
+    #     else:
+    #         err = "MAD"
+    #     plot_dict = list_dict[i]
+    #     fig, ax = plt.subplots()
+    #     fig.set_figwidth(15)
+    #     fig.set_figheight(7)
+    #     fig.suptitle(err+" distribution")
+
+    #     del plot_dict["0"]
+    #     del plot_dict["4"]
+
+    #     plot_pdict={}
+    #     plot_pdict["1"]=plot_dict["2"]
+    #     plot_pdict["2"]=plot_dict["1"]
+    #     plot_pdict["3"]=plot_dict["3"]
+
+    #     models=[]
+    #     for e in plot_pdict.keys():
+    #         models.append(get_model_name(int(e)))
+    #     ax.set_xticklabels(models)
+    #     box = ax.boxplot(plot_pdict.values(),patch_artist=True)
+    #     for patch, color in zip(box['boxes'], ["#66c2a5", "#8da0cb", "#fc8d62"]):
+    #         patch.set_facecolor(color)
+    #     plt.savefig('test/benchmark/results_plots/metrics_'+err+'.png', bbox_inches='tight')
+    #     # plt.show()
             
 
-    ## Best benchmark analysis
-    dfMse=df_params.query("mse == "+str(df_params["mse"].min()))
-    dfMed=df_params.query("mad == "+str(df_params["mad"].min()))
-    dfMae=df_params.query("mae == "+str(df_params["mae"].min()))
-    df_best = dfMse.append(dfMed, ignore_index=True).append(dfMae, ignore_index=True).drop_duplicates(subset='model_id', keep="first")
-    # print(df_best)
+    # ## Best benchmark analysis
+    # dfMse=df_params.query("mse == "+str(df_params["mse"].min()))
+    # dfMed=df_params.query("mad == "+str(df_params["mad"].min()))
+    # dfMae=df_params.query("mae == "+str(df_params["mae"].min()))
+    # df_best = dfMse.append(dfMed, ignore_index=True).append(dfMae, ignore_index=True).drop_duplicates(subset='model_id', keep="first")
+    # # print(df_best)
 
 import seaborn as sns
 def plot_false_positive(bmk_file, modelID="4-"):
@@ -236,4 +285,8 @@ def plot_false_positive(bmk_file, modelID="4-"):
 
 
 if __name__ == "__main__":
-    plot_false_positive(conf.benchmark_file, "4-")
+    # plot_false_positive(conf.benchmark_file, "4-")
+    gt_file = conf.ground_truth_file
+    param_file = conf.parameters_gts
+    bmk_file = conf.benchmark_file
+    plot_bmk_analyses(gt_file, param_file, bmk_file)
