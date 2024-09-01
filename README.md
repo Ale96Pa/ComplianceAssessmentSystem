@@ -1,4 +1,8 @@
-# Compliance Assessment System
+# A compliance assessment system for Incident Management process
+
+## Abstract 
+
+The Incident Management (IM) process is one of the core activities for increasing the overall security level of organizations and better responding to cyber attacks. Different security frameworks (such as ITIL and ISO 27035) provide guidelines for designing and properly implementing an effective IM process. Currently, assessing the compliance of the actual process implemented by an organization with such frameworks is a complex task. The assessment is mainly manually performed and requires much effort in the analysis and evaluation. In this paper, we first propose a taxonomy of compliance deviations to classify and prioritize the impacts of non-compliant causes. We combine trace alignment techniques with a new proposed cost model for the analysis of process deviations rather than process traces to prioritize interventions. We put these contributions into use in a system that automatically assesses the IM process compliance with a reference process model (e.g., the one described in the chosen security framework). It supports the auditor with increased awareness of process issues to make more focused decisions and improve the process’s effectiveness. We propose a benchmark validation for the model, and we show the system’s capability through a usage scenario based on a publicly available dataset of a real IM log.
 
 ## Description
 
@@ -36,3 +40,20 @@ Notice: if your dataset does not have a non-compliance cost attribute, you can A
 Download this github repositiory, set the configuration (if any) and run the command from your terminal:
 
 $ python -u "<path_to_this_folder>\src\main.py"
+
+## Cite this work
+
+```
+@article{PALMA2024104070,
+title = {A compliance assessment system for Incident Management process},
+journal = {Computers & Security},
+volume = {146},
+pages = {104070},
+year = {2024},
+issn = {0167-4048},
+doi = {https://doi.org/10.1016/j.cose.2024.104070},
+url = {https://www.sciencedirect.com/science/article/pii/S0167404824003754},
+author = {Alessandro Palma and Giacomo Acitelli and Andrea Marrella and Silvia Bonomi and Marco Angelini},
+keywords = {Incident management, Security governance, Process compliance assessment, Cost model, Trace alignment},
+}
+```
