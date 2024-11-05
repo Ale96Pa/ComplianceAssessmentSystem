@@ -1,5 +1,7 @@
 # Compliance Assessment System - BENCHMARK
 
+### Refer to this [work](https://github.com/Ale96Pa/BenchIMP) (https://github.com/Ale96Pa/BenchIMP) for a more extensive benchmark.
+
 ## Description
 
 This bennshark contains the scripts (in the folder _test_) and the results (in the folder _benchmark_) to reproduce the validation.
